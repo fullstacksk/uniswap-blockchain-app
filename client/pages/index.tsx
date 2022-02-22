@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Header from '../components/Header'
+import Main from '../components/Main'
 
 const style = {
   wrapper:
@@ -10,7 +11,7 @@ const Home: NextPage = () => {
   return (
     <div className={style.wrapper}>
       <Header />
-      <h1>Main</h1>
+      <Main />
       <h1>Transaction History</h1>
     </div>
   )

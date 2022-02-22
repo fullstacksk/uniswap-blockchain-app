@@ -6,7 +6,7 @@ import { HiOutlineDotsVertical } from 'react-icons/hi'
 import ethLogo from '../assets/eth.png'
 import uniswapLogo from '../assets/uniswap.png'
 import { useContext } from 'react'
-// import { TransactionContext } from '../context/TransactionContext'
+import { TransactionContext } from '../context/TransactionContext'
 // import { client } from '../lib/sanityClient'
 
 const style = {
@@ -27,12 +27,12 @@ const style = {
 const Header = () => {
   const [selectedNav, setSelectedNav] = useState('swap')
     const [userName, setUserName] = useState()
-    const currentAccount = false;
-//   const { connectWallet, currentAccount } = useContext(TransactionContext)
+    const { connectToWallet, currentAccount } = useContext(TransactionContext);
+    console.log(connectToWallet, currentAccount)
 
 //   useEffect(() => {
 //     if (currentAccount) {
-//       ;(async () => {
+//       (async () => {
 //         const query = `
 //         *[_type=="users" && _id == "${currentAccount}"] {
 //           userName,
@@ -105,11 +105,12 @@ const Header = () => {
         </div>
         {currentAccount ? (
           <div className={`${style.button} ${style.buttonPadding}`}>
-            <div className={style.buttonTextContainer}>{userName}</div>
+            {/* <div className={style.buttonTextContainer}>{userName}</div> */}
+            <div className={style.buttonTextContainer}>Shailendra</div>
           </div>
         ) : (
           <div
-            // onClick={() => connectWallet()}
+            onClick={() => connectToWallet()}
             className={`${style.button} ${style.buttonPadding}`}
           >
             <div className={`${style.buttonAccent} ${style.buttonPadding}`}>
